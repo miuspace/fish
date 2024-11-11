@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-  backgroundImageSize = 100;
+  backgroundImageSize = 1920;
   
   elem = jQuery(".row1 .col1, .row2 .col1, .row3 .col1"); 
   for(ind = 0; ind < 3; ind++) {
