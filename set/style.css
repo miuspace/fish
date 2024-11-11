@@ -1,5 +1,6 @@
 /*// This is what makes the background right here.*/ 
-.post::before{
+.post{overflow: hidden;}
+.post-header::before{
   content: ' ';
   display: block;
   background-image: url('https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b');
