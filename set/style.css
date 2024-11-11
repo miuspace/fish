@@ -53,7 +53,7 @@
 }
 
 @media(max-width: 768px){
-    .row1 .col1{background-position: center!important;background-size: 2000px 1125px!important;}
-    .row2 .col1{background-position: center !important;background-size: 2000px 1133px!important;}
-    .row3 .col1{background-position: center !important;background-size: 2000px 1500px!important;}
+    .row1 .col1{background-position: left!important;background-size: 2000px 1125px!important;}
+    .row2 .col1{background-position: left !important;background-size: 2000px 1133px!important;}
+    .row3 .col1{background-position: left !important;background-size: 2000px 1500px!important;}
 }
