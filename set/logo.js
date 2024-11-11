@@ -5,7 +5,7 @@ jQuery(document).ready(function(){
   for(ind = 0; ind < 3; ind++) {
     elem[ind].getBoundingClientRect();
    
-      elem[ind].style.setProperty('background-position', (elem[ind].getBoundingClientRect().left + jQuery(".col1").width() / 0 - (backgroundImageSize/2))+'px center', 'important');
+      elem[ind].style.setProperty('background-position', (elem[ind].getBoundingClientRect().left + jQuery(".col1").width() / 2 - (backgroundImageSize/2))+'px center', 'important');
   }
 
   var width = $(window).width();
@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
         
         for(ind = 0; ind < 3; ind++) {
           elem[ind].getBoundingClientRect();
-          elem[ind].style.setProperty('background-position', (elem[ind].getBoundingClientRect().left + jQuery(".col1").width() / 0 - (backgroundImageSize/2))+'px center', 'important');
+          elem[ind].style.setProperty('background-position', (elem[ind].getBoundingClientRect().left + jQuery(".col1").width() / 2 - (backgroundImageSize/2))+'px center', 'important');
         }
      }
   });
