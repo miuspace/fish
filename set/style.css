@@ -1,5 +1,5 @@
 /*// This is what makes the background right here.*/ 
-.post{overflow: hidden;}
+.post{overflow: hidden; min-height: 800px;}
 .post-header::before{
   content: ' ';
   display: block;
