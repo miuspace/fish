@@ -1,4 +1,4 @@
-.disturber {
+.background-fixed-q {
   margin-top: 80px;
   margin-bottom: 80px;
   min-height: 40vh;
@@ -11,22 +11,23 @@
   overflow: hidden;
 }
 
-@supports (clip-path: inset(0 0 0 0)) {
-  .disturber {
-    clip-path: inset(0 0 0 0);
+/*supports是寫給部分瀏覽器讀的，意思是看得懂括弧內的參數的瀏覽器才會執行的意思*/
+@supports (clip-path: inset(0 0 0 0)) { 
+  .background-fixed-q {
+    clip-path: inset(0 0 0 0); /*inset的是形狀遮罩，例如像SVG裡就會看見*/
   }
 }
 
-.disturber + .disturber {
+.background-fixed-q + .background-fixed-q {
   margin-top: -80px;
 }
 
-.disturber--dark {
+.background-fixed-q--dark {
   color: #000;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
-.disturber__background {
+.background-fixed-q__background {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -40,13 +41,13 @@
 }
 
 @supports (clip-path: inset(0 0 0 0)) {
-  .disturber__background {
+  .background-fixed-q__background {
     position: fixed;
     background-attachment: scroll;
   }
 }
 
-.disturber__background::before {
+.background-fixed-q__background::before {
   content: "";
   position: absolute;
   top: 0;
@@ -58,22 +59,22 @@
   z-index: 0;
 }
 
-.disturber--dark .disturber__background::before {
+.background-fixed-q--dark .background-fixed-q__background::before {
   background: #fff;
 }
 
-/* Opacity levels for .disturber__background */
-.disturber__background--opacity-10::before { opacity: 0.1; }
-.disturber__background--opacity-20::before { opacity: 0.2; }
-.disturber__background--opacity-30::before { opacity: 0.3; }
-.disturber__background--opacity-40::before { opacity: 0.4; }
-.disturber__background--opacity-50::before { opacity: 0.5; }
-.disturber__background--opacity-60::before { opacity: 0.6; }
-.disturber__background--opacity-70::before { opacity: 0.7; }
-.disturber__background--opacity-80::before { opacity: 0.8; }
-.disturber__background--opacity-90::before { opacity: 0.9; }
+/* Opacity levels for .background-fixed-q__background */
+.background-fixed-q__background--opacity-10::before { opacity: 0.1; }
+.background-fixed-q__background--opacity-20::before { opacity: 0.2; }
+.background-fixed-q__background--opacity-30::before { opacity: 0.3; }
+.background-fixed-q__background--opacity-40::before { opacity: 0.4; }
+.background-fixed-q__background--opacity-50::before { opacity: 0.5; }
+.background-fixed-q__background--opacity-60::before { opacity: 0.6; }
+.background-fixed-q__background--opacity-70::before { opacity: 0.7; }
+.background-fixed-q__background--opacity-80::before { opacity: 0.8; }
+.background-fixed-q__background--opacity-90::before { opacity: 0.9; }
 
-.disturber__content {
+.background-fixed-q__content {
   max-width: calc(960px + 2em);
   width: 100%;
   margin: 0 auto;
@@ -82,7 +83,7 @@
   padding: 4em 2em;
 }
 
-.disturber__content > div {
+.background-fixed-q__content > div {
   max-width: 600px;
 }
 
