@@ -1,75 +1,96 @@
-/**
- * 3 golden rules
- * @copyright 2021 www.havutcuoglu.com
- * @author Hakan Havutcuoglu
- * https://codepen.io/havutcuoglu/pen/VwWqgZr
- * This notice MUST stay intact in CSS file for free and legal usege.
- **/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stick+No+Bills:wght@500&display=swap');
-
-@mixin v-align($pos:relative,$top:50%,$ty:-50%) {
-  position: $pos;
-  top: $top;
-  transform: translateY($ty);
+.disturber {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  min-height: 40vh;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  overflow: hidden;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-}
-h1,h2 {
-  font-family: 'Stick No Bills', sans-serif;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-h1 {
-  font-size: 8rem;
-  color: gold;
-  text-shadow: 0 0 10px #000000;
-  border-bottom: 2px solid gold;
-}
-h2 {
-  font-size: 4rem;
-  color: black;
-  line-height: 1;
-}
- {
-  
-}
-
-.banner-wrapper .box {
-    background: rgba(255,255,255,0.2);
-    border-radius: 10px;
-    padding: 3rem 2rem;
-    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+@supports (clip-path: inset(0 0 0 0)) {
+  .disturber {
+    clip-path: inset(0 0 0 0);
   }
- .banner-wrapper .text {
-    color: white;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
-.bg-img {
-  position: relative;
+}
+
+.disturber + .disturber {
+  margin-top: -80px;
+}
+
+.disturber--dark {
+  color: #000;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.disturber__background {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
   background-attachment: fixed;
-  min-width: 100vw;
-  min-height: 100vh;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
-.footer {
-  background-color: black;
-  color:white;
-  padding: 2rem;
-}
-.v-align {
-  @include v-align($top:100%);
-}
-@media screen and (max-width:639px) {
-  .banner-wrapper {
-    text-align: center;
+
+@supports (clip-path: inset(0 0 0 0)) {
+  .disturber__background {
+    position: fixed;
+    background-attachment: scroll;
   }
+}
+
+.disturber__background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  z-index: 0;
+}
+
+.disturber--dark .disturber__background::before {
+  background: #fff;
+}
+
+/* Opacity levels for .disturber__background */
+.disturber__background--opacity-10::before { opacity: 0.1; }
+.disturber__background--opacity-20::before { opacity: 0.2; }
+.disturber__background--opacity-30::before { opacity: 0.3; }
+.disturber__background--opacity-40::before { opacity: 0.4; }
+.disturber__background--opacity-50::before { opacity: 0.5; }
+.disturber__background--opacity-60::before { opacity: 0.6; }
+.disturber__background--opacity-70::before { opacity: 0.7; }
+.disturber__background--opacity-80::before { opacity: 0.8; }
+.disturber__background--opacity-90::before { opacity: 0.9; }
+
+.disturber__content {
+  max-width: calc(960px + 2em);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 4em 2em;
+}
+
+.disturber__content > div {
+  max-width: 600px;
+}
+
+/* Basic demo styling */
+body {
+  padding: 100vh 0;
+}
+
+body > :first-child {
+  margin-top: -10vh;
 }
