@@ -1,96 +1,75 @@
-/*// This is what makes the background right here.*/ 
-.post{overflow: hidden; min-height: 800px;}
-.post-header::before{
-  content: ' ';
-  display: block;
-  background-image: url('https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b');
+/**
+ * 3 golden rules
+ * @copyright 2021 www.havutcuoglu.com
+ * @author Hakan Havutcuoglu
+ * https://codepen.io/havutcuoglu/pen/VwWqgZr
+ * This notice MUST stay intact in CSS file for free and legal usege.
+ **/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Stick+No+Bills:wght@500&display=swap');
+
+@mixin v-align($pos:relative,$top:50%,$ty:-50%) {
+  position: $pos;
+  top: $top;
+  transform: translateY($ty);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+h1,h2 {
+  font-family: 'Stick No Bills', sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 8rem;
+  color: gold;
+  text-shadow: 0 0 10px #000000;
+  border-bottom: 2px solid gold;
+}
+h2 {
+  font-size: 4rem;
+  color: black;
+  line-height: 1;
+}
+ {
+  
+}
+
+.banner-wrapper .box {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  }
+ .banner-wrapper .text {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+.bg-img {
+  position: relative;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
-  z-index: -10; /*This is pretty important.*/
+  background-attachment: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
-
-/*// This is just the stuff to make the pen look pretty.*/
-html {
-  font-family: "source sans pro";
-  font-weight: 400;
-  color: #fdfdfd;
+.footer {
+  background-color: black;
+  color:white;
+  padding: 2rem;
 }
-h1, h2, h3 {
-  font-family: lato;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.v-align {
+  @include v-align($top:100%);
 }
-a{ text-decoration: none;
-  color: #FFC74E;
-  transition: color 200ms ease-in-out;}
-a:hover, &:focus {
-    color: #C84EFF;
+@media screen and (max-width:639px) {
+  .banner-wrapper {
+    text-align: center;
   }
-
-hr {
-  border: #555 1px solid;
 }
-.post {
-  font-size: 1.125rem;
-}
-.content {
-  max-width: 50rem;
-  margin: 0 auto;
-}
-
-.post-header-inner {
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 25rem;
-  padding: 0.5rem 1.5rem;
-  // text-shadow: 1px 1.5px 4px rgba(167, 221, 255, 0.8);
-  text-shadow: 0.5px 2px 2px rgba(1, 1, 1, 0.4);}
-  .post-header-inner h1 {
-    font-size: 2rem;
-    color: #333;
-  }
-  .post-header-inner .post-date {
-    color: #B28B36;
-  }
-  .post-header-inner .post-meta {
-    width: 100%;
-    margin-top: auto;
-    color: #FFF;
-    text-shadow: 1px 1.5px 4px rgba(1, 1, 1, 0.8);
-  }
-  .post-header-inner .author-name {
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-
-
-.post-content {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(18px);
-  padding: 1rem 1.5rem;
-    
-}
-.note {
-  color: #D3D3D3;
-  border: 3px solid red;
-  padding: 0.625rem;}
-  .note span {
-    font-weight: bold;
-    color: red;
-  }
-
-footer {
-  padding: 1rem 1.5rem;
-  background-color: #222;
-  padding-bottom: 4rem;
-}
-
-
