@@ -3,14 +3,14 @@
 .box-img{width: 100%; height: 100%; position: relative; overflow: hidden;}
 .box-img img{ position: absolute; width: 100%; height: 100%; object-fit: cover; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 
-.block-a , .block-b , .block-c{width: calc( 100% / 3 ); position: relative; overflow: hidden;transition: ease 0.5s all;}
+.block-a , .block-b , .block-c{width: calc( 100% / 3 ); position: relative; overflow: hidden;transition: ease 1s all;}
 
-.block-a.click-bl-op{width: 250%!important;}
-.block-b.click-bl-op{width: 110%!important;}
-.block-c.click-bl-op{width: 110%!important;}
-body .block-wrape .block-a.click-bl-op-s{width: calc( 100% / 5 );}
-body .block-wrape .block-b.click-bl-op-s{width: calc( 100% / 5 );}
-body .block-wrape .block-c.click-bl-op-s{width: calc( 100% / 5 );}
+.block-a.click-bl-op{width: 200%!important;}
+.block-b.click-bl-op{width: 200%!important;}
+.block-c.click-bl-op{width: 200%!important;}
+body .block-wrape .block-a.click-bl-op-s{width: calc( 100% / 3 );}
+body .block-wrape .block-b.click-bl-op-s{width: calc( 100% / 3 );}
+body .block-wrape .block-c.click-bl-op-s{width: calc( 100% / 3 );}
 
 .block-a.click-bl-op .mask{display: none;}
 .block-b.click-bl-op .mask{display: none;}

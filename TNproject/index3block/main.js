@@ -6,7 +6,7 @@ function initializeBlockAEvent() {
     // 監聽點擊事件
     $(document).on("click", function(event) {
         // 檢查點擊的是否是 .block-a
-        if ($(event.target).closest(".block-a").length) {
+        if ($(event.target).closest(".block-a").length ) {
             // 點擊 .block-a 時，添加 .op 類別
             $('.block-a').addClass('op');
             // 檢查 .block-a 是否有 .op 類別
@@ -21,10 +21,14 @@ function initializeBlockAEvent() {
                 $(".block-c").removeClass('click-bl-op-s');
             }
         } else {
-            // 點擊其他地方時，移除 .op 類別
-            $('.block-a').removeClass('op').removeClass('click-bl-op');
-            $('.block-b').removeClass('op').removeClass('click-bl-op-s');
-            $('.block-c').removeClass('op').removeClass('click-bl-op-s');
+
+                     if ($(event.target).closest(".block-b,.block-c").length) {
+                             // 點擊其他地方時，移除 .op 類別
+                            $('.block-a').removeClass('op').removeClass('click-bl-op');
+                            $('.block-b').removeClass('op').removeClass('click-bl-op-s');
+                            $('.block-c').removeClass('op').removeClass('click-bl-op-s');
+                        } 
+           
         }
     });
 
@@ -45,10 +49,12 @@ function initializeBlockAEvent() {
                 $(".block-c").removeClass('click-bl-op-s');
             }
         } else {
-            // 點擊其他地方時，移除 .op 類別
-            $('.block-b').removeClass('op').removeClass('click-bl-op');
-            $('.block-a').removeClass('op').removeClass('click-bl-op-s');
-            $('.block-c').removeClass('op').removeClass('click-bl-op-s');
+            if ($(event.target).closest(".block-a,.block-c").length) {
+                // 點擊其他地方時，移除 .op 類別
+                $('.block-b').removeClass('op').removeClass('click-bl-op');
+                $('.block-a').removeClass('op').removeClass('click-bl-op-s');
+                $('.block-c').removeClass('op').removeClass('click-bl-op-s');
+            }
         }
     });
 
@@ -69,10 +75,12 @@ function initializeBlockAEvent() {
                 $('.block-a').removeClass('click-bl-op-s');
             }
         } else {
-            // 點擊其他地方時，移除 .op 類別
-            $('.block-c').removeClass('op').removeClass('click-bl-op');
-            $('.block-a').removeClass('op').removeClass('click-bl-op-s');
-            $('.block-b').removeClass('op').removeClass('click-bl-op-s');
+            if ($(event.target).closest(".block-a,.block-b").length) {
+                // 點擊其他地方時，移除 .op 類別
+                $('.block-c').removeClass('op').removeClass('click-bl-op');
+                $('.block-a').removeClass('op').removeClass('click-bl-op-s');
+                $('.block-b').removeClass('op').removeClass('click-bl-op-s');
+            }
         }
     });
 
