@@ -5,12 +5,12 @@
 
 .block-a , .block-b , .block-c{width: calc( 100% / 3 ); position: relative; overflow: hidden;transition: ease 0.5s all;}
 
-.block-a.click-bl-op{width: calc( 100% / 1 )!important;}
-.block-b.click-bl-op{width: calc( 100% / 1 )!important;}
-.block-c.click-bl-op{width: calc( 100% / 1 )!important;}
-body .block-wrape .block-a.click-bl-op-s{width: calc( 100% / 4 );}
-body .block-wrape .block-b.click-bl-op-s{width: calc( 100% / 4 );}
-body .block-wrape .block-c.click-bl-op-s{width: calc( 100% / 4 );}
+.block-a.click-bl-op{width: 250%!important;}
+.block-b.click-bl-op{width: 110%!important;}
+.block-c.click-bl-op{width: 110%!important;}
+body .block-wrape .block-a.click-bl-op-s{width: calc( 100% / 5 );}
+body .block-wrape .block-b.click-bl-op-s{width: calc( 100% / 5 );}
+body .block-wrape .block-c.click-bl-op-s{width: calc( 100% / 5 );}
 
 .block-a.click-bl-op .mask{display: none;}
 .block-b.click-bl-op .mask{display: none;}
