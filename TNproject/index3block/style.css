@@ -1,0 +1,24 @@
+.block-wrape{display: flex; width: 100%; height: 500px; overflow: hidden;}
+
+.box-img{width: 100%; height: 100%; position: relative; overflow: hidden;}
+.box-img img{ position: absolute; width: 100%; height: 100%; object-fit: cover; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+.block-a , .block-b , .block-c{width: calc( 100% / 3 ); position: relative; overflow: hidden;transition: ease 0.5s all;}
+
+.block-a.click-bl-op{width: calc( 100% / 1 )!important;}
+.block-b.click-bl-op{width: calc( 100% / 1 )!important;}
+.block-c.click-bl-op{width: calc( 100% / 1 )!important;}
+body .block-wrape .block-a.click-bl-op-s{width: calc( 100% / 4 );}
+body .block-wrape .block-b.click-bl-op-s{width: calc( 100% / 4 );}
+body .block-wrape .block-c.click-bl-op-s{width: calc( 100% / 4 );}
+
+.block-a.click-bl-op .mask{display: none;}
+.block-b.click-bl-op .mask{display: none;}
+.block-c.click-bl-op .mask{display: none;}
+.mask{ display: block; width: 100%; height: 100%; object-fit: cover; background-color:rgba(0, 0, 0, 0.5) ; position: absolute;z-index: 3;}
+
+
+.block-a.click-bl-op .text-main{display: block; position: absolute; top: 0; left: 0; padding: 50px;}
+.block-b.click-bl-op .text-main{display: block; position: absolute; top: 0; left: 0; padding: 50px;}
+.block-c.click-bl-op .text-main{display: block; position: absolute; top: 0; left: 0; padding: 50px;}
+.text-main p{ color: #000; }
