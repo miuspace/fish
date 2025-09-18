@@ -13,6 +13,7 @@ body{margin: 0;}
   justify-content: center;
   font-size: 15px;
   overflow: hidden;
+
 }
 
 /*supports是寫給部分瀏覽器讀的，意思是看得懂括弧內的參數的瀏覽器才會執行的意思*/
