@@ -65,7 +65,7 @@ function initBackgroundSwitcher() {
         switchBackground(newBg);
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.1 });
 
   blocks.forEach(block => observer.observe(block));
 }
