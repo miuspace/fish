@@ -1,0 +1,133 @@
+body{margin: 0;}
+
+
+/*固定背景改良*/
+.background-fixed-q {
+  margin-top: 0;
+  margin-bottom: 80px;
+  min-height: 40vh;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  overflow: hidden;
+}
+
+/*supports是寫給部分瀏覽器讀的，意思是看得懂括弧內的參數的瀏覽器才會執行的意思*/
+@supports (clip-path: inset(0 0 0 0)) { 
+  .background-fixed-q {
+    clip-path: inset(0 0 0 0); /*inset的是形狀遮罩，例如像SVG裡就會看見*/
+  }
+}
+
+.background-fixed-q + .background-fixed-q {
+  margin-top: -80px;
+}
+
+.background-fixed-q--dark {
+  color: #000;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.background-fixed-q__background {
+  background-repeat: no-repeat;
+  background-position: 165px 190px;
+  background-attachment: fixed;
+  background-size: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 91vw;
+  height: 93vh;
+  pointer-events: none;
+}
+
+@supports (clip-path: inset(0 0 0 0)) {
+  .background-fixed-q__background {
+    position: fixed;
+    background-attachment: scroll;
+  }
+}
+
+.background-fixed-q__background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  z-index: 0;
+}
+
+.background-fixed-q--dark .background-fixed-q__background::before {
+  background: #fff;
+}
+
+/* Opacity levels for .background-fixed-q__background */
+.background-fixed-q__background--opacity-10::before { opacity: 0.1; }
+.background-fixed-q__background--opacity-20::before { opacity: 0.2; }
+.background-fixed-q__background--opacity-30::before { opacity: 0.3; }
+.background-fixed-q__background--opacity-40::before { opacity: 0.4; }
+.background-fixed-q__background--opacity-50::before { opacity: 0.5; }
+.background-fixed-q__background--opacity-60::before { opacity: 0.6; }
+.background-fixed-q__background--opacity-70::before { opacity: 0.7; }
+.background-fixed-q__background--opacity-80::before { opacity: 0.8; }
+.background-fixed-q__background--opacity-90::before { opacity: 0.9; }
+
+.background-fixed-q__content {
+  max-width: calc(960px + 2em);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 13em 2em;
+}
+
+.background-fixed-q__content > div {
+  max-width: 100%;
+}
+
+
+
+
+[data-bg-mwrap] {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.change-bg-img {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s;
+  z-index: -1;
+  pointer-events: none;
+}
+.mchange_content {
+  position: relative;
+  z-index: 1;
+}
+
+[data-bg-mchange] {
+  min-height: 100vh;
+  padding: 80px 0;
+  display: block;
+}
+
+/*---*/
+
+.page-main{display: flex; justify-content: space-between;}
+.wrap-right-w{ width: 5.5%;height: 100vh;  background-image: url(../wrap-right-w.jpg);background-repeat: no-repeat; background-size: contain; background-position: top; position: fixed; top: 0; right: 0;}
+.wrap-left-w{width: 94.5%;}
+.head-fix{position: fixed; top: 50px; left: 50%; transform: translateX(-50%);    z-index: 999;}
+
+
+.next-wrap{width: 100%;}
